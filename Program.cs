@@ -13,4 +13,11 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseHealthChecks("/health");
 
+app.MapGet("/weather", () => new WeatherForecast(DateTime.Now, 21, "Sunny"));
+
 app.Run();
+
+public record WeatherForecast(DateTime Date, int TemperatureC, string Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
