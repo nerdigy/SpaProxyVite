@@ -1,0 +1,6 @@
+@SpaProxyVite_HostAddress = https://localhost:3000
+
+GET {{SpaProxyVite_HostAddress}}/health
+Accept: application/json
+
+###
